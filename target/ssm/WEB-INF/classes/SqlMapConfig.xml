@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- ssm整合后，此文件就不需要了，
+因为以下配置都有spring的配置文件进行配置了-->
+
+<configuration>
+    <!-- 配置环境 -->
+    <environments default="mysql">
+        <environment id="mysql">
+            <transactionManager type="jdbc"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/ssm"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--配置引入的配置文件-->
+    <mappers>
+        <!-- 配置注解扫描的包,简单，推荐 -->
+        <package name="com.itjj.dao"/>
+
+        <!-- 配置映射配置文件
+             用注解方法，就没有配置文件了 -->
+        <!-- <mapper resource="com.itjj.dao/xxxMapper.xml"/>-->
+
+        <!-- 配置注解扫描的类
+             直接指定包，就不用每次都写Dao映射的类了-->
+        <!--<mapper class="com.itjj.dao.AccountDao"/>-->
+    </mappers>
+
+</configuration>

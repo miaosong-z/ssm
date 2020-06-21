@@ -1,0 +1,10 @@
+CREATE DATABASE `ssm` ;
+USE `ssm`;
+DROP TABLE IF EXISTS `account`;
+CREATE TABLE `account` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) DEFAULT NULL,
+  `money` double DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+insert  into `account`(`id`,`name`,`money`) values (1,'小红',1000),(2,'小明',1000);
